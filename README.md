@@ -1,4 +1,5 @@
-# Miro's windows manager
+# Dillie-O's HammerSpoon Windows Management
+(Extendend from [Miro's windows manager](https://github.com/miromannino/miro-windows-manager)
 
 With this script you will be able to move the window in halves and in corners using your keyboard and mainly using arrows. You would also be able to resize them by thirds, quarters, or halves.
 
