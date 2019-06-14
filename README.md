@@ -1,20 +1,36 @@
 # Dillie-O's HammerSpoon Windows Management
-(Extendend from [Miro's windows manager](https://github.com/miromannino/miro-windows-manager)
+(Extendend with much gratitude from [Miro's windows manager](https://github.com/miromannino/miro-windows-manager)
 
-With this script you will be able to move the window in halves and in corners using your keyboard and mainly using arrows. You would also be able to resize them by thirds, quarters, or halves.
+Hammerspoon provides an amazing foundation in which to make work more productive. Having enjoyed Spectacle, but needed just a little bit more, I stumbled upon Hammerspoon, and Miro's Window Manager, which I tweaked and extended a bit further to suit my ongoing needs.
 
-Other projects (e.g. Spectacle) move windows in halves using arrows, and in corners using other counterintuitive shortcuts, like letters, which makes things confusing.
+## Features
+Once installed, this script provided the following window management commands:
 
-This script needs Hammerspoon in order to work.
+### Movement
+* Move window to the left/right half of the screen (sized incrementally)
+* Move window to the top/bottom half of the screen (sized incrementally)
+* Move window to the corners of the screen (sized incrementally)
+* Move window to the adjacent monitor (north/south/east/west)
 
-![example](https://github.com/miromannino/miro-windows-manager/raw/imgs/example.gif)
+### Sizing
+* Adjust window to fit entire width of the screen
+* Adjust window to fit entire height of the screen
+* Adjust window to fit full screen (sized incrementally)
+* Adjust window to fit in the center of the screen (full height, sized incrementally)
 
-## How to install
+### Incremental Sizing
+Most of the actions above include incremental sizing. This means that pressing the same action multiple times will yield a different size result. For example, moving the window to the left side of the screen will do it by half the first time, by a third the second time, and by 2/3rds the third time. This allows you to quick dock/size based on your needs.
 
- - Extract the zip file, containing `MiroWindowsManager.spoon` in `~/.hammerspoon/Spoons`
- - Now you need to configure Hammerspoon in order to load this spoon in `~/.hammerspoon/Spoons/MiroWindowsManager.spoon` adding the following snippet of code in your `init.lua` file:
+## Installation (skip to step 4 if you already have Hammerspoon installed)
+
+1. Install [Hammerspoon](https://www.hammerspoon.org)
+2. Launch Hammerspoon, open preferences, and make sure Hammerspoon launches at login and you have enabled accessibility for the app (the icon will be green next to the button).
+3. Extract the zip file into the `~/.hammerspoon/Spoons` folder. Note: The spoon file itself (MirADillieOWinspoon.spoon) is a module (folder) that consists of an `init.lua` file and a `docs.json` file. You need to navigate into this folder or open the .spoon file in a tool like Visual Studio Code if you want to make any edits.
+4. In the Hammerspoon menu, select "Open Config" and add the following code that will configure the hotkeys and spoon to load. Note: This is code exists in your `~/.hammerspoon/init.lua` file.
+
 ```
-local hyper = {"ctrl", "alt", "cmd"}
+local hyper = {"alt", "cmd"}
+local hyperPlus = {"ctrl", "alt", "cmd"}
 
 hs.loadSpoon("MiroWindowsManager")
 
@@ -24,9 +40,15 @@ spoon.MiroWindowsManager:bindHotkeys({
   right = {hyper, "right"},
   down = {hyper, "down"},
   left = {hyper, "left"},
-  fullscreen = {hyper, "f"}
+  fullscreen = {hyper, "f"},
+  centerscreen = {hyper, "c"},
+  monitoreast = {hyperPlus, "right"},
+  monitorwest = {hyperPlus, "left"}
 })
 ```
+5. Save the config file and select the "Reload Config" option.
+6. Enjoy your newfound window management power!
+
 
 ## Shortcuts
 
@@ -34,7 +56,11 @@ In the snippet above configure Miro'w Windows Manager in the following way:
 
 ### Hyper key
 
- The hyper key is defined as `ctrl` + `alt` + `cmd`. This means that each shortcut will start by pressing these three keys. If you consider this too verbose for your personal keyboard interactions, you can also change it, for example replacing it with an unused key (e.g. caps lock key) with [Karabiner](https://pqrs.org/osx/karabiner/) and [Seil](https://pqrs.org/osx/karabiner/seil.html.en) to act as hyper key.
+The hyper key is defined as `alt` + `cmd`. This means that each shortcut will start by pressing these two keys. If you consider this too verbose for your personal keyboard interactions, you can also change it, for example replacing it with an unused key (e.g. caps lock key) with [Karabiner](https://pqrs.org/osx/karabiner/) and [Seil](https://pqrs.org/osx/karabiner/seil.html.en) to act as hyper key.
+
+### HyperPlus key
+
+The hyper plus key is defined as `ctrl` + `alt` + `cmd`. This means that each shortcut will start by pressing these three keys. There were some actions that the arrows worked best for that were already taken, so you add another activator to the combination and life is good. You can always modify the `init.lua` file in your main Hammerspoon config if you want to map out the keystrokes differently
 
 ### Move in halves
 
@@ -71,34 +97,22 @@ Note that in case the window is resized to be a half of the screen, you can also
 
 As the other shortcuts, `hyper` + `f` can be pressed multiple times to obtain a centered window of three fourth and one half of height and width. This behaviour can be customized.
 
+### Center screen
+
+ - `hyper` + `c`: centers the window on the screen. This also sets the window height to the max value of the window. This is handy for things like web browsers on large displays where you don't want it taking up the entire width of the display, but also need it front and center for work.
+
+Note that in case the window is resized to be a half of the screen, you can also use `hyper` + `up` + `down` (or `hyper` + `right` + `left`) to resize the window full screen.
+
+As the other shortcuts, `hyper` + `c` can be pressed multiple times to obtain a centered window of one third, two thirds, and one half of width. This behaviour can be customized.
+
 ## Animations
 
 The snippet above configures the animation to last `0.3s` with `hs.window.animationDuration = 0.3`. To remove the animations completely change this value to `0`.
 
-## Reviews
-
-Here comments from the users, just as reviews.
-
-> it's something I have been looking for all my life! It is really intuitive and ingenious once you see the magic it can do.
-> 
-> &mdash; [rxng](https://github.com/miromannino/hammerspoon-config/issues/1)
-
-> Really loving the arrow based positioning, thanks for making this ! I can now uninstall “spectacle” which I was using for the same purpose but the key bindings were unintuitive.
->
-> &mdash; Gaurav
-
-> the only issue I have with miro-windows-manager is the fact that I didn't discover it sooner. just getting into HammerSpoon and love this 🥄 ... so handy, nice work @miromannino !
->
-> &mdash; [zanuka](https://github.com/miromannino/miro-windows-manager/issues/13)
-
-## Articles
-
-A suggested tutorial on Mic Sumner: https://www.micsumner.com/how-to-organise-window-viewing-areas-in-mac-os/
-
 
 ## License (MIT)
 
-Copyright (c) 2018 Miro Mannino
+Copyright (c) 2019 Sean Patterson
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
