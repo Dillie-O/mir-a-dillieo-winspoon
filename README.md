@@ -1,4 +1,4 @@
-# Dillie-O's HammerSpoon Windows Management
+# Dillie-O's HammerSpoon Window Management
 (Extendend with much gratitude from [Miro's windows manager](https://github.com/miromannino/miro-windows-manager)
 
 Hammerspoon provides an amazing foundation in which to make work more productive. Having enjoyed Spectacle, but needed just a little bit more, I stumbled upon Hammerspoon, and Miro's Window Manager, which I tweaked and extended a bit further to suit my ongoing needs.
@@ -29,21 +29,23 @@ Most of the actions above include incremental sizing. This means that pressing t
 4. In the Hammerspoon menu, select "Open Config" and add the following code that will configure the hotkeys and spoon to load. Note: This is code exists in your `~/.hammerspoon/init.lua` file.
 
 ```
-local hyper = {"alt", "cmd"}
-local hyperPlus = {"ctrl", "alt", "cmd"}
+local activator = {"alt", "cmd"}
+local activatorPlus = {"ctrl", "alt", "cmd"}
 
-hs.loadSpoon("MiroWindowsManager")
+hs.loadSpoon("MirADillieOWinSpoon")
 
 hs.window.animationDuration = 0.3
-spoon.MiroWindowsManager:bindHotkeys({
-  up = {hyper, "up"},
-  right = {hyper, "right"},
-  down = {hyper, "down"},
-  left = {hyper, "left"},
-  fullscreen = {hyper, "f"},
-  centerscreen = {hyper, "c"},
-  monitoreast = {hyperPlus, "right"},
-  monitorwest = {hyperPlus, "left"}
+spoon.MirADillieOWinSpoon:bindHotkeys({
+  up = {activator, "up"},
+  right = {activator, "right"},
+  down = {activator, "down"},
+  left = {activator, "left"},
+  fullscreen = {activator, "f"},
+  centerscreen = {activator, "c"},
+  monitorleft = {activatorPlus, "left"},
+  monitorright = {activatorPlus, "right"},
+  monitorup = {activatorPlus, "up"},
+  monitordown = {activatorPlus, "down"},
 })
 ```
 5. Save the config file and select the "Reload Config" option.
@@ -52,58 +54,58 @@ spoon.MiroWindowsManager:bindHotkeys({
 
 ## Shortcuts
 
-In the snippet above configure Miro'w Windows Manager in the following way:
+In the snippet above configure Mir-a-Dillie-O in the following way:
 
-### Hyper key
+### Activator key
 
-The hyper key is defined as `alt` + `cmd`. This means that each shortcut will start by pressing these two keys. If you consider this too verbose for your personal keyboard interactions, you can also change it, for example replacing it with an unused key (e.g. caps lock key) with [Karabiner](https://pqrs.org/osx/karabiner/) and [Seil](https://pqrs.org/osx/karabiner/seil.html.en) to act as hyper key.
+The activator key is defined as `alt` + `cmd`. This means that each shortcut will start by pressing these two keys. If you consider this too verbose for your personal keyboard interactions, you can also change it, for example replacing it with an unused key (e.g. caps lock key) with [Karabiner](https://pqrs.org/osx/karabiner/) and [Seil](https://pqrs.org/osx/karabiner/seil.html.en) to act as activator key.
 
-### HyperPlus key
+### ActivatorPlus key
 
-The hyper plus key is defined as `ctrl` + `alt` + `cmd`. This means that each shortcut will start by pressing these three keys. There were some actions that the arrows worked best for that were already taken, so you add another activator to the combination and life is good. You can always modify the `init.lua` file in your main Hammerspoon config if you want to map out the keystrokes differently
+The activator plus key is defined as `ctrl` + `alt` + `cmd`. This means that each shortcut will start by pressing these three keys. There were some actions that the arrows worked best for that were already taken, so you add another activator to the combination and life is good. You can always modify the `init.lua` file in your main Hammerspoon config if you want to map out the keystrokes differently
 
 ### Move in halves
 
- - `hyper` + `up`: move to the top half of the screen
- - `hyper` + `right`: move to the right half of the screen
- - `hyper` + `down`: move to the bottom half of the screen
- - `hyper` + `left`: move to the left half of the screen
+ - `activator` + `up`: move to the top half of the screen
+ - `activator` + `right`: move to the right half of the screen
+ - `activator` + `down`: move to the bottom half of the screen
+ - `activator` + `left`: move to the left half of the screen
 
-By repeating these shortcuts the window is resized to be one third or two thirds and again in one half. 
+By repeating these shortcuts the window is resized to be one third or two thirds and again in one half.
 
 ### Move to corners
 
- - `hyper` + `up` + `right`: move the window to the top-right corner
- - `hyper` + `down` + `right`: move the window to the bottom-right corner
- - `hyper` + `up` + `left`: move the window to the top-left corner
- - `hyper` + `down` + `left`: move the window to the bottom-left corner
+ - `activator` + `up` + `right`: move the window to the top-right corner
+ - `activator` + `down` + `right`: move the window to the bottom-right corner
+ - `activator` + `up` + `left`: move the window to the top-left corner
+ - `activator` + `down` + `left`: move the window to the bottom-left corner
 
- When the window is in the corner, it will have one half of screen height and one half of screen width. 
- The arrows can be used to expand the height/width to be one third, two thirds or again one half. 
- For example if the window is in the top-right corner, pressing `hyper` + `up` the window height will be resized to be one third, while pressing `hyper` + `right` the window width will be resized to be one third; in this case `hyper` + `left` and `hyper` + `down` will move the window to the top-left and bottom-right corners, respectively.
+ When the window is in the corner, it will have one half of screen height and one half of screen width.
+ The arrows can be used to expand the height/width to be one third, two thirds or again one half.
+ For example if the window is in the top-right corner, pressing `activator` + `up` the window height will be resized to be one third, while pressing `activator` + `right` the window width will be resized to be one third; in this case `activator` + `left` and `activator` + `down` will move the window to the top-left and bottom-right corners, respectively.
 
 ### Expand to fit the entire height or width
 
 These are useful in case the window is in one of the corners.
 
- - `hyper` + `up` + `down`: expand the height to fit the entire screen height
- - `hyper` + `right` + `left`: expand the width to fit the entire screen width
+ - `activator` + `up` + `down`: expand the height to fit the entire screen height
+ - `activator` + `right` + `left`: expand the width to fit the entire screen width
 
 ### Expand to fullscreen
 
- - `hyper` + `f`: expand to be full screen
+ - `activator` + `f`: expand to be full screen
 
-Note that in case the window is resized to be a half of the screen, you can also use `hyper` + `up` + `down` (or `hyper` + `right` + `left`) to resize the window full screen.
+Note that in case the window is resized to be a half of the screen, you can also use `activator` + `up` + `down` (or `activator` + `right` + `left`) to resize the window full screen.
 
-As the other shortcuts, `hyper` + `f` can be pressed multiple times to obtain a centered window of three fourth and one half of height and width. This behaviour can be customized.
+As the other shortcuts, `activator` + `f` can be pressed multiple times to obtain a centered window of three fourth and one half of height and width. This behaviour can be customized.
 
 ### Center screen
 
- - `hyper` + `c`: centers the window on the screen. This also sets the window height to the max value of the window. This is handy for things like web browsers on large displays where you don't want it taking up the entire width of the display, but also need it front and center for work.
+ - `activator` + `c`: centers the window on the screen. This also sets the window height to the max value of the window. This is handy for things like web browsers on large displays where you don't want it taking up the entire width of the display, but also need it front and center for work.
 
-Note that in case the window is resized to be a half of the screen, you can also use `hyper` + `up` + `down` (or `hyper` + `right` + `left`) to resize the window full screen.
+Note that in case the window is resized to be a half of the screen, you can also use `activator` + `up` + `down` (or `activator` + `right` + `left`) to resize the window full screen.
 
-As the other shortcuts, `hyper` + `c` can be pressed multiple times to obtain a centered window of one third, two thirds, and one half of width. This behaviour can be customized.
+As the other shortcuts, `activator` + `c` can be pressed multiple times to obtain a centered window of one third, two thirds, and one half of width. This behaviour can be customized.
 
 ## Animations
 

@@ -1,0 +1,308 @@
+[
+  {
+    "Constant" : [
+
+    ],
+    "submodules" : [
+
+    ],
+    "Function" : [
+
+    ],
+    "Variable" : [
+      {
+        "doc" : "The sizes that the window can have. \nThe sizes are expressed as dividend of the entire screen's size.\nFor example `{2, 3, 3\/2}` means that it can be 1\/2, 1\/3 and 2\/3 of the total screen's size",
+        "name" : "sizes",
+        "stripped_doc" : [
+          "The sizes that the window can have. ",
+          "The sizes are expressed as dividend of the entire screen's size.",
+          "For example `{2, 3, 3\/2}` means that it can be 1\/2, 1\/3 and 2\/3 of the total screen's size"
+        ],
+        "parameters" : [
+
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "MirADillieOWinSpoon.sizes",
+        "type" : "Variable",
+        "returns" : [
+
+        ],
+        "def" : "MirADillieOWinSpoon.sizes",
+        "desc" : "The sizes that the window can have."
+      },
+      {
+        "doc" : "The sizes that the window can have in full-screen. \nThe sizes are expressed as dividend of the entire screen's size.\nFor example `{1, 4\/3, 2}` means that it can be 1\/1 (hence full screen), 3\/4 and 1\/2 of the total screen's size",
+        "name" : "fullScreenSizes",
+        "stripped_doc" : [
+          "The sizes that the window can have in full-screen. ",
+          "The sizes are expressed as dividend of the entire screen's size.",
+          "For example `{1, 4\/3, 2}` means that it can be 1\/1 (hence full screen), 3\/4 and 1\/2 of the total screen's size"
+        ],
+        "parameters" : [
+
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "MirADillieOWinSpoon.fullScreenSizes",
+        "type" : "Variable",
+        "returns" : [
+
+        ],
+        "def" : "MirADillieOWinSpoon.fullScreenSizes",
+        "desc" : "The sizes that the window can have in full-screen."
+      },
+      {
+        "doc" : "The sizes that the window width can have in center-screen. \nThe sizes are expressed as dividend of the entire screen's width.\nFor example `3\/2, 3, 2, 4\/3` means that it can be 2\/3, 1\/3, 1\/2, and 3\/4 of the total screen's width",
+        "name" : "centerScreenSizes",
+        "stripped_doc" : [
+          "The sizes that the window can have in center-screen.",
+          "The sizes are expressed as dividend of the entire screen's width. The height is the full height.",
+          "For example `3\/2, 3, 2, 4\/3` means that it can be 2\/3, 1\/3, 1\/2, and 3\/4 of the total screen's width"
+        ],
+        "parameters" : [
+
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "MirADillieOWinSpoon.centerScreenSizes",
+        "type" : "Variable",
+        "returns" : [
+
+        ],
+        "def" : "MirADillieOWinSpoon.centerScreenSizes",
+        "desc" : "The sizes that the window can have in center-screen."
+      },
+      {
+        "doc" : "The screen's size using `hs.grid.setGrid()`\nThis parameter is used at the spoon's `:init()`",
+        "name" : "GRID",
+        "stripped_doc" : [
+          "The screen's size using `hs.grid.setGrid()`",
+          "This parameter is used at the spoon's `:init()`"
+        ],
+        "parameters" : [
+
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "MirADillieOWinSpoon.GRID",
+        "type" : "Variable",
+        "returns" : [
+
+        ],
+        "def" : "MirADillieOWinSpoon.GRID",
+        "desc" : "The screen's size using `hs.grid.setGrid()`"
+      }
+    ],
+    "stripped_doc" : [
+
+    ],
+    "desc" : "With this script you will be able to move the window in halves and in corners using your keyboard and mainly using arrows. You would also be able to resize them by thirds, quarters, or halves.",
+    "type" : "Module",
+    "Deprecated" : [
+
+    ],
+    "Constructor" : [
+
+    ],
+    "doc" : "With this script you will be able to move the window in halves and in corners using your keyboard and mainly using arrows. You would also be able to resize them by thirds, quarters, or halves.\n\nOfficial homepage for more info and documentation: [https:\/\/github.com\/miromannino\/miro-windows-manager](https:\/\/github.com\/miromannino\/miro-windows-manager)\n\nDownload: [https:\/\/github.com\/miromannino\/miro-windows-manager\/raw\/master\/MirADillieOWinSpoon.spoon.zip](https:\/\/github.com\/miromannino\/miro-windows-manager\/raw\/master\/MirADillieOWinSpoon.spoon.zip)",
+    "Method" : [
+      {
+        "doc" : "Binds hotkeys for Miro's Windows Manager\nParameters:\n * mapping - A table containing hotkey details for the following items:\n  * up: for the up action (usually {activator, \"up\"})\n  * right: for the right action (usually {activator, \"right\"})\n  * down: for the down action (usually {activator, \"down\"})\n  * left: for the left action (usually {activator, \"left\"})\n  * fullscreen: for the full-screen action (e.g. {activator, \"f\"})\n\nA configuration example can be:\n```\nlocal activator = {\"ctrl\", \"alt\", \"cmd\"}\nspoon.MirADillieOWinSpoon:bindHotkeys({\n  up = {activator, \"up\"},\n  right = {activator, \"right\"},\n  down = {activator, \"down\"},\n  left = {activator, \"left\"},\n  fullscreen = {activator, \"f\"}\n})\n```",
+        "name" : "bindHotkeys",
+        "stripped_doc" : [
+          "Binds hotkeys for Miro's Windows Manager"
+        ],
+        "parameters" : [
+          " * mapping - A table containing hotkey details for the following items:",
+          "  * up: for the up action (usually {activator, \"up\"})",
+          "  * right: for the right action (usually {activator, \"right\"})",
+          "  * down: for the down action (usually {activator, \"down\"})",
+          "  * left: for the left action (usually {activator, \"left\"})",
+          "  * fullscreen: for the full-screen action (e.g. {activator, \"f\"})",
+          "  * centerscreen: for the center-screen action (e.g. {activator, \"c\"})",
+          "  * monitorleft: for the monitorleft action (e.g. {activatorPlus, \"left\"})",
+          "  * monitorright: for the monitorleft action (e.g. {activatorPlus, \"right\"})",
+          "  * monitorup: for the monitorleft action (e.g. {activatorPlus, \"up\"})",
+          "  * monitordown: for the monitorleft action (e.g. {activatorPlus, \"down\"})",
+          "",
+          "A configuration example can be:",
+          "```",
+          "local activator = {\"alt\", \"cmd\"}",
+          "local activatorPlus = {\"ctrl\", \"alt\", \"cmd\"}",
+          "spoon.MirADillieOWinSpoon:bindHotkeys({",
+          "  up = {activator, \"up\"},",
+          "  right = {activator, \"right\"},",
+          "  down = {activator, \"down\"},",
+          "  left = {activator, \"left\"},",
+          "  fullscreen = {activator, \"f\"}",
+          "  centerscreen = {activator, \"c\"}",
+          "  monitorleft = {activatorPlus, \"left\"}",
+          "  monitorright = {activatorPlus, \"right\"}",
+          "  monitorup = {activatorPlus, \"up\"}",
+          "  monitordown = {activatorPlus, \"down\"}",
+          "})",
+          "```"
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "MirADillieOWinSpoon:bindHotkeys()",
+        "type" : "Method",
+        "returns" : [
+
+        ],
+        "def" : "MirADillieOWinSpoon:bindHotkeys()",
+        "desc" : "Binds hotkeys for Miro's Windows Manager"
+      }
+    ],
+    "Command" : [
+
+    ],
+    "items" : [
+      {
+        "doc" : "The screen's size using `hs.grid.setGrid()`\nThis parameter is used at the spoon's `:init()`",
+        "name" : "GRID",
+        "stripped_doc" : [
+          "The screen's size using `hs.grid.setGrid()`",
+          "This parameter is used at the spoon's `:init()`"
+        ],
+        "parameters" : [
+
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "MirADillieOWinSpoon.GRID",
+        "type" : "Variable",
+        "returns" : [
+
+        ],
+        "def" : "MirADillieOWinSpoon.GRID",
+        "desc" : "The screen's size using `hs.grid.setGrid()`"
+      },
+      {
+        "doc" : "The sizes that the window can have in full-screen. \nThe sizes are expressed as dividend of the entire screen's size.\nFor example `{1, 4\/3, 2}` means that it can be 1\/1 (hence full screen), 3\/4 and 1\/2 of the total screen's size",
+        "name" : "fullScreenSizes",
+        "stripped_doc" : [
+          "The sizes that the window can have in full-screen. ",
+          "The sizes are expressed as dividend of the entire screen's size.",
+          "For example `{1, 4\/3, 2}` means that it can be 1\/1 (hence full screen), 3\/4 and 1\/2 of the total screen's size"
+        ],
+        "parameters" : [
+
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "MirADillieOWinSpoon.fullScreenSizes",
+        "type" : "Variable",
+        "returns" : [
+
+        ],
+        "def" : "MirADillieOWinSpoon.fullScreenSizes",
+        "desc" : "The sizes that the window can have in full-screen."
+      },
+      {
+        "doc" : "The sizes that the window width can have in center-screen. \nThe sizes are expressed as dividend of the entire screen's width.\nFor example `3\/2, 3, 2, 4\/3` means that it can be 2\/3, 1\/3, 1\/2, and 3\/4 of the total screen's width",
+        "name" : "centerScreenSizes",
+        "stripped_doc" : [
+          "The sizes that the window can have in center-screen.",
+          "The sizes are expressed as dividend of the entire screen's width. The height is the full height.",
+          "For example `3\/2, 3, 2, 4\/3` means that it can be 2\/3, 1\/3, 1\/2, and 3\/4 of the total screen's width"
+        ],
+        "parameters" : [
+
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "MirADillieOWinSpoon.centerScreenSizes",
+        "type" : "Variable",
+        "returns" : [
+
+        ],
+        "def" : "MirADillieOWinSpoon.centerScreenSizes",
+        "desc" : "The sizes that the window can have in center-screen."
+      },
+      {
+        "doc" : "The sizes that the window can have. \nThe sizes are expressed as dividend of the entire screen's size.\nFor example `{2, 3, 3\/2}` means that it can be 1\/2, 1\/3 and 2\/3 of the total screen's size",
+        "name" : "sizes",
+        "stripped_doc" : [
+          "The sizes that the window can have. ",
+          "The sizes are expressed as dividend of the entire screen's size.",
+          "For example `{2, 3, 3\/2}` means that it can be 1\/2, 1\/3 and 2\/3 of the total screen's size"
+        ],
+        "parameters" : [
+
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "MirADillieOWinSpoon.sizes",
+        "type" : "Variable",
+        "returns" : [
+
+        ],
+        "def" : "MirADillieOWinSpoon.sizes",
+        "desc" : "The sizes that the window can have."
+      },
+      {
+        "doc" : "Binds hotkeys for Miro's Windows Manager\nParameters:\n * mapping - A table containing hotkey details for the following items:\n  * up: for the up action (usually {activator, \"up\"})\n  * right: for the right action (usually {activator, \"right\"})\n  * down: for the down action (usually {activator, \"down\"})\n  * left: for the left action (usually {activator, \"left\"})\n  * fullscreen: for the full-screen action (e.g. {activator, \"f\"})\n\nA configuration example can be:\n```\nlocal activator = {\"ctrl\", \"alt\", \"cmd\"}\nspoon.MirADillieOWinSpoon:bindHotkeys({\n  up = {activator, \"up\"},\n  right = {activator, \"right\"},\n  down = {activator, \"down\"},\n  left = {activator, \"left\"},\n  fullscreen = {activator, \"f\"}\n})\n```",
+        "name" : "bindHotkeys",
+        "stripped_doc" : [
+          "Binds hotkeys for Miro's Windows Manager"
+        ],
+        "parameters" : [
+          " * mapping - A table containing hotkey details for the following items:",
+          "  * up: for the up action (usually {activator, \"up\"})",
+          "  * right: for the right action (usually {activator, \"right\"})",
+          "  * down: for the down action (usually {activator, \"down\"})",
+          "  * left: for the left action (usually {activator, \"left\"})",
+          "  * fullscreen: for the full-screen action (e.g. {activator, \"f\"})",
+          "  * centerscreen: for the center-screen action (e.g. {activator, \"c\"})",
+          "  * monitorleft: for the monitorleft action (e.g. {activatorPlus, \"left\"})",
+          "  * monitorright: for the monitorleft action (e.g. {activatorPlus, \"right\"})",
+          "  * monitorup: for the monitorleft action (e.g. {activatorPlus, \"up\"})",
+          "  * monitordown: for the monitorleft action (e.g. {activatorPlus, \"down\"})",
+          "",
+          "A configuration example can be:",
+          "```",
+          "local activator = {\"alt\", \"cmd\"}",
+          "local activatorPlus = {\"ctrl\", \"alt\", \"cmd\"}",
+          "spoon.MirADillieOWinSpoon:bindHotkeys({",
+          "  up = {activator, \"up\"},",
+          "  right = {activator, \"right\"},",
+          "  down = {activator, \"down\"},",
+          "  left = {activator, \"left\"},",
+          "  fullscreen = {activator, \"f\"}",
+          "  centerscreen = {activator, \"c\"}",
+          "  monitorleft = {activatorPlus, \"left\"}",
+          "  monitorright = {activatorPlus, \"right\"}",
+          "  monitorup = {activatorPlus, \"up\"}",
+          "  monitordown = {activatorPlus, \"down\"}",
+          "})",
+          "```"
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "MirADillieOWinSpoon:bindHotkeys()",
+        "type" : "Method",
+        "returns" : [
+
+        ],
+        "def" : "MirADillieOWinSpoon:bindHotkeys()",
+        "desc" : "Binds hotkeys for Mir-a-Dillie-O WinSpoon"
+      }
+    ],
+    "Field" : [
+
+    ],
+    "name" : "MirADillieOWinSpoon"
+  }
+]
